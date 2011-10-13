@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<root>
+  <list>
+    <item>
+      <name>tk84</name>
+      <list>
+        <item>
+          <name>JIS_UNDERSCORE to BACKSLASH</name>
+          <identifier>remap.net_tk84_jis_underscore_to_backslash</identifier>
+          <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::BACKSLASH</autogen>
+        </item>
+        <item>
+          <name>JIS_BRACKET_RIGHT to CONTROL_R</name>
+          <identifier>net.tk84.remap.jis_blacket_right_to_control_r</identifier>
+          <autogen>--KeyToKey-- KeyCode::JIS_BRACKET_RIGHT, KeyCode::CONTROL_R</autogen>
+        </item>
+        <item>
+          <name>Switch</name>
+          <appendix>under score to ctrl</appendix>
+          <identifier>net.tk84.remap.jis_underscore_to_control_r</identifier>
+          <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::CONTROL_R</autogen>
+        </item>
+        <item>
+          <name>layout prev</name>
+          <appendix>(cmdKey-{) -> (C-z h c) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.layout_prev</identifier>
+          <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND | VK_SHIFT, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::C</autogen>
+        </item>
+        <item>
+          <name>layout next</name>
+          <appendix>(cmdKey-}) -> (C-z h d) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.layout_next</identifier>
+          <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT,  VK_COMMAND | VK_SHIFT, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::D</autogen>
+        </item>
+        <item>
+          <name>prev</name>
+          <appendix>(cmdKey-[) -> (C-z h a) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.prev</identifier>
+          <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::A</autogen>
+        </item>
+        <item>
+          <name>next</name>
+          <appendix>(cmdKey-]) -> (C-z h b) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.next</identifier>
+          <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::B</autogen>
+        </item>
+        <item>
+          <name>focus prev</name>
+          <appendix>(cmdKey + controlKey + shiftKey + t) -> (C-z h g) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.focus_prev</identifier>
+          <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | VK_CONTROL | VK_SHIFT, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::G</autogen>
+        </item>
+        <item>
+          <name>focus next</name>
+          <appendix>(cmdKey + controlKey + t) -> (C-z h f) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.focus_next</identifier>
+          <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | VK_CONTROL, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::F</autogen>
+        </item>
+        <item>
+          <name>layout new</name>
+          <appendix>(cmdKey-t) -> (C-z h e) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.layout_new</identifier>
+          <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_R, KeyCode::H, KeyCode::E</autogen>
+        </item>
+        <item>
+          <name>other-window -1</name>
+          <appendix>(controlKey+shiftKey+t) -> (M-n) </appendix>
+          <only>TERMINAL</only>
+          <identifier>net.tk84.remap.screen.other_window_-1</identifier>
+          <autogen>--KeyToKey-- KeyCode::T, VK_CONTROL | VK_SHIFT, KeyCode::N, ModifierFlag::OPTION_R</autogen>
+        </item>
+      </list>
+    </item>
+  </list>
+</root>
