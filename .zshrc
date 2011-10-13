@@ -1,5 +1,5 @@
 # パスの設定
-export PATH=~/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # rvm
 # gem セットを作る http://d.hatena.ne.jp/tbrook/20110303/1298497876
