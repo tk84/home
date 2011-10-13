@@ -1,0 +1,31 @@
+escape ^Zz
+
+# 新しいscreenを開く
+bind ! colon 'screen '
+
+# C-gをキャンセルとして使うためにデフォルトのキーバインドを削除
+bind ^g
+
+# ウィンドウ選択
+bind 0 remove
+bind 1 only
+bind 2 split
+bind 3 split -v
+bind o focus
+
+# keyremap4macbook を使って cocoa ライクなキーバインドに
+bind -c formac a prev           # cmdKey + [
+bind -c formac b next           # cmdKey + ]
+bind -c formac c layout prev    # cmdKey + shiftKey + [
+bind -c formac d layout next    # cmdKey + shiftKey + ]
+bind -c formac e layout new     # cmdKey + t
+bind -c formac f focus next     # cmdKey + controlKey + t
+bind -c formac g focus prev     # cmdKey + controlKey + shiftKey + t
+bind h command -c formac
+
+# コマンド入力
+bind -c formac h colon          # cmdKey + metaKey + x
+
+# ウィンドウを開く
+bind -c formac h colon screen   # cmdKey + o
+
