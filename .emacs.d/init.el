@@ -29,6 +29,14 @@
 (menu-bar-mode nil)			;メニューバーを非表示
 (setq-default truncate-lines t)		;行の折り返しをしない
 
+;; オートリバートモード
+;; 他のプログラムが開いているファイルに変更を加えた時すぐ反映
+;; (global-auto-revert-mode t)
+;; (turn-on-auto-revert-mode)
+(add-hook 'ruby-mode-hook 'turn-on-auto-revert-mode)
+(add-hook 'objc-mode-hook 'turn-on-auto-revert-mode)
+(add-hook 'c-mode-hook 'turn-on-auto-revert-mode)
+
 ;; (if window-system
 ;;     (progn
 ;;       (set-frame-parameter nil 'alpha 100) ; 透明度
@@ -168,4 +176,4 @@
 ;; ________________________________________________________________________________
 
 (setq buffer-menu-sort-column 5)	;バッファをファイル名でソート
-(global-auto-revert-mode 1)		;リバーとモード
+
