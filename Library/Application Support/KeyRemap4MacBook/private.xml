@@ -2,8 +2,23 @@
 <root>
   <list>
     <item>
-      <name>tk84</name>
+      <name>ユーザー定義</name>
       <list>
+	<item>
+	  <name>GNU Emacs</name>
+	  <list>
+	    <item>
+	      <name>一つ前のウィンドウへ移動</name>
+	      <appendix>[C S t] -> [(C c) (end) (C a)]</appendix>
+	      <appendix>other-window -1</appendix>
+	      <appendix>TERMINAL,EMACS</appendix>
+	      <identifier>net.tk84.remap.emacs.other-window -1</identifier>
+	      <only>TERMINAL</only>
+	      <only>EMACS</only>
+	      <autogen>--KeyToKey-- KeyCode::T, VK_CONTROL | VK_SHIFT, KeyCode::C, VK_CONTROL, KeyCode::END, KeyCode::A, VK_CONTROL</autogen>
+	    </item>
+	  </list>
+	</item>
         <item>
           <name>JIS_UNDERSCORE to BACKSLASH</name>
           <identifier>remap.net_tk84_jis_underscore_to_backslash</identifier>

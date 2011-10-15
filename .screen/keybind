@@ -1,10 +1,10 @@
 escape ^Zz
 
-# 新しいscreenを開く
-bind ! colon 'screen '
-
 # C-gをキャンセルとして使うためにデフォルトのキーバインドを削除
 bind ^g
+
+# 新しいscreenを開く
+bind ! colon 'screen '
 
 # ウィンドウ選択
 bind 0 remove
@@ -14,6 +14,7 @@ bind 3 split -v
 bind o focus
 
 # keyremap4macbook を使って cocoa ライクなキーバインドに
+bind h command -c formac
 bind -c formac a prev           # cmdKey + [
 bind -c formac b next           # cmdKey + ]
 bind -c formac c layout prev    # cmdKey + shiftKey + [
@@ -21,11 +22,27 @@ bind -c formac d layout next    # cmdKey + shiftKey + ]
 bind -c formac e layout new     # cmdKey + t
 bind -c formac f focus next     # cmdKey + controlKey + t
 bind -c formac g focus prev     # cmdKey + controlKey + shiftKey + t
-bind h command -c formac
+bind -c formac h colon          # cmdKey + metaKey + x コマンド入力
+bind -c formac i colon screen   # cmdKey + o　ウィンドウを開く
 
-# コマンド入力
-bind -c formac h colon          # cmdKey + metaKey + x
+# KeyRemap4MacBook で使う
+# bind "^\033[20~" command -c formac # プレフィックスキーとして C-<f9>
+# bind -c formac ^a prev
+# bind -c formac ^b next
+# bind -c formac ^c layout prev
+# bind -c formac ^d layout next
+# bind -c formac ^e focus prev
+# bind -c formac ^f focus next
+# bind -c formac ^g layout new
+# bind -c formac ^h 
+# bind -c formac ^i 
+# bind -c formac ^j 
+# bind -c formac ^k 
 
-# ウィンドウを開く
-bind -c formac h colon screen   # cmdKey + o
+# emacs をエミュレートする場合には最初の修飾キーにcommandをつける
+# [M x] は [command M x]
+# [(C x) (3)] は [(command C x) (3)]
+# [(C x) (C b)] は [(command C x) (C b)]
+
+
 

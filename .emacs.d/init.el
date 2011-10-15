@@ -2,25 +2,37 @@
 
 ;; 
 ;; キーバインド
+;; 
+;; その他に割り当てられるキーを探す (75)
+;; M-英大文字
+;; C-c 英字
+;; <f5> - <f9>
+;; (Shift, Alt, Ctrl) + ファンクションキー
 ;; ________________________________________________________________________________
 
 (global-set-key "\C-h" 'delete-backward-char) ;; C-hでカーソルより前の一文字削除
 
 ;; windowの切り替え
 (global-set-key "\C-t" 'other-window) ;; C-t で次のウィンドウ、C-S-t で前のウィンドウ
-(if window-system
-    (global-set-key (kbd "C-S-t") (lambda () (interactive) (other-window -1)))
-  ;; Terminal.app で C-S ガ使えないため keyremap4macbook で C-S-t -> M-n に割り当て
-  (global-set-key "\M-n" (lambda () (interactive) (other-window -1))))
+
+;; (if window-system
+;;     (global-set-key (kbd "C-S-t") (lambda () (interactive) (other-window -1)))
+;;   ;; Terminal.app で C-S ガ使えないため keyremap4macbook で C-S-t -> M-n に割り当て
+;;   (global-set-key "\M-n" (lambda () (interactive) (other-window -1))))
 
 ;; buffer の切り替え
-(global-set-key "\M-[" 'previous-buffer)
-(global-set-key "\M-]" 'next-buffer)
+(global-set-key [M \[] 'previous-buffer)
+(global-set-key [M \]] 'next-buffer)
 
-;M-g M-g を M-g 一回で goto-line
-(global-set-key "\M-g" 'goto-line)
+;; M-g M-g を M-g 一回で goto-line
+(global-set-key [M g] 'goto-line)
 
-;; 
+;; KeyRemap4MacBook 用の設定
+(define-prefix-command 'keyremap4macbook-map)
+(global-set-key [(C c) (end)] 'keyremap4macbook-map) ;[(C c) (end)] をプレフィックスキーとして使う
+(define-key keyremap4macbook-map [(C a)] (lambda () (interactive) (other-window -1))) ;[C S t]
+
+;;
 ;; ????
 ;; ________________________________________________________________________________
 
@@ -101,13 +113,14 @@
 ;テキストモードの時
 (add-hook 'text-mode-hook
           (lambda ()
-                  (setq indent-line-function 'tab-to-tab-stop)
-                  (setq-default tab-width 4)
-                  (setq default-tab-width 4)
-                  (setq-default indent-tabs-mode nil)
-                  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
-                                          64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
-                  ))
+            (setq indent-line-function 'tab-to-tab-stop)
+            (setq-default tab-width 4)
+            (setq default-tab-width 4)
+            (setq-default indent-tabs-mode nil)
+            (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
+                                    64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
+            (add-hook 'text-mode 'turn-on-auto-revert-mode)
+            ))
 
 ;; バッファリストを同じウィンドウで
 (define-key global-map [(C x) (C b)] 'buffer-menu)
