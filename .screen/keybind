@@ -14,30 +14,33 @@ bind 3 split -v
 bind o focus
 
 # keyremap4macbook を使って cocoa ライクなキーバインドに
-bind h command -c formac
-bind -c formac a prev           # cmdKey + [
-bind -c formac b next           # cmdKey + ]
-bind -c formac c layout prev    # cmdKey + shiftKey + [
-bind -c formac d layout next    # cmdKey + shiftKey + ]
-bind -c formac e layout new     # cmdKey + t
-bind -c formac f focus next     # cmdKey + controlKey + t
-bind -c formac g focus prev     # cmdKey + controlKey + shiftKey + t
-bind -c formac h colon          # cmdKey + metaKey + x コマンド入力
-bind -c formac i colon screen   # cmdKey + o　ウィンドウを開く
+# bind h command -c formac
+# bind -c formac a prev           # cmdKey + [
+# bind -c formac b next           # cmdKey + ]
+# bind -c formac c layout prev    # cmdKey + shiftKey + [
+# bind -c formac d layout next    # cmdKey + shiftKey + ]
+# bind -c formac e layout new     # cmdKey + t
+# bind -c formac f focus next     # cmdKey + controlKey + t
+# bind -c formac g focus prev     # cmdKey + controlKey + shiftKey + t
+# bind -c formac h colon          # cmdKey + metaKey + x コマンド入力
+# bind -c formac i colon screen   # cmdKey + o　ウィンドウを開く
 
 # KeyRemap4MacBook で使う
-# bind "^\033[20~" command -c formac # プレフィックスキーとして C-<f9>
-# bind -c formac ^a prev
-# bind -c formac ^b next
-# bind -c formac ^c layout prev
-# bind -c formac ^d layout next
-# bind -c formac ^e focus prev
-# bind -c formac ^f focus next
-# bind -c formac ^g layout new
-# bind -c formac ^h 
+# プレフィックスキーとして [(C a)]
+# escape を変更しているため [(C a)] は使われないことが保証される
+# [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
+bind ^a command -c formac
+bind -c formac ^b prev		#[(command /[)] -> [(C z) (C a) (C b)]
+bind -c formac ^c next		#[(command /])] -> [(C z) (C a) (C c)]
+bind -c formac ^d layout prev	#[(command {)] -> [(C z) (C a) (C d)]
+bind -c formac ^e layout next	#[(command })] -> [(C z) (C a) (C e)]
+bind -c formac ^f focus prev	#[(command C S t)] -> [(C z) (C a) (C f)]
+bind -c formac ^g focus next	#[(command C t)] -> [(C z) (C a) (C g)]
+bind -c formac ^h layout new	#[(command t)] -> [(C z) (C a) (C h)]
 # bind -c formac ^i 
 # bind -c formac ^j 
 # bind -c formac ^k 
+# bind -c formac ^l 
 
 # emacs をエミュレートする場合には最初の修飾キーにcommandをつける
 # [M x] は [command M x]
