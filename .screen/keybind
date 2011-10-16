@@ -14,8 +14,8 @@ bind 3 split -v
 bind o focus
 
 # KeyRemap4MacBook で使う
-# プレフィックスキーとして [C a]
-# escape を変更しているため [C a] は使われないことが保証される
+# プレフィックスキーとして [(C a)]
+# escape を変更しているため [(C a)] は使われないことが保証される
 # [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
 bind ^a command -c formac
 bind -c formac ^b prev		#[(command /[)] -> [(C z) (C a) (C b)]
