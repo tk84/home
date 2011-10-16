@@ -25,15 +25,15 @@ layout title layout-emacs
 # shell layout の初期化
 layout select layout-shell
 select group-shell
-split -v
 split
+split -v
 screen
 
 focus next
 select group-shell
 
 focus next
-split
+split -v
 select group-shell
 
 focus

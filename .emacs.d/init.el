@@ -1,4 +1,4 @@
-(if window-system t (server-mode))	;端末の場合サーバとして起動
+(unless window-system (server-mode))	;端末の場合サーバとして起動
 
 ;; 
 ;; キーバインド
@@ -21,16 +21,16 @@
 ;;   (global-set-key "\M-n" (lambda () (interactive) (other-window -1))))
 
 ;; buffer の切り替え
-(global-set-key [M \[] 'previous-buffer)
-(global-set-key [M \]] 'next-buffer)
+(global-set-key [(M \[)] 'previous-buffer)
+(global-set-key [(M \])] 'next-buffer)
 
 ;; M-g M-g を M-g 一回で goto-line
-(global-set-key [M g] 'goto-line)
+(global-set-key [(M g)] 'goto-line)
 
 ;; KeyRemap4MacBook 用の設定
 (define-prefix-command 'keyremap4macbook-map)
 (global-set-key [(C c) (end)] 'keyremap4macbook-map) ;[(C c) (end)] をプレフィックスキーとして使う
-(define-key keyremap4macbook-map [(C a)] (lambda () (interactive) (other-window -1))) ;[C S t]
+(define-key keyremap4macbook-map [(C a)] (lambda () (interactive) (other-window -1))) ;[(C S t)]
 
 ;;
 ;; ????

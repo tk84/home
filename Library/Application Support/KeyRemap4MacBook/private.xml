@@ -75,13 +75,13 @@
 	  <name>GNU Emacs</name>
 	  <list>
 	    <item>
-	      <name>一つ前のウィンドウへ移動</name>
+	      <name>一つ前のウィンドウへフォーカスを移す</name>
 	      <appendix>[C S t] -> [(C c) (end) (C a)]</appendix>
 	      <appendix>other-window -1</appendix>
 	      <appendix>TERMINAL,EMACS</appendix>
 	      <identifier>net.tk84.remap.emacs.other-window -1</identifier>
 	      <only>TERMINAL,EMACS</only>
-	      <autogen>--KeyToKey-- KeyCode::T, VK_CONTROL | VK_SHIFT, KeyCode::C, VK_CONTROL, KeyCode::END, KeyCode::A, VK_CONTROL</autogen>
+	      <autogen>--KeyToKey-- KeyCode::T, VK_CONTROL | VK_SHIFT | ModifierFlag::NONE, KeyCode::C, VK_CONTROL, KeyCode::END, KeyCode::A, VK_CONTROL</autogen>
 	    </item>
 	  </list>
 	</item>
@@ -100,6 +100,12 @@
           <appendix>under score to ctrl</appendix>
           <identifier>net.tk84.remap.jis_underscore_to_control_r</identifier>
           <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::CONTROL_R</autogen>
+        </item>
+        <item>
+          <name>Mouse</name>
+          <appendix>mouse move</appendix>
+          <identifier>net.tk84.remap.mousemove</identifier>
+	  <autogen>--SimultaneousKeyPresses-- KeyCode::R, KeyCode::E, ModifierFlag::COMMAND_R, KeyCode::SPACE</autogen>
         </item>
       </list>
     </item>
