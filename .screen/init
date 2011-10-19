@@ -26,13 +26,13 @@ layout title layout-emacs
 layout select layout-shell
 select group-shell
 split
-split -v
+# split -v
 screen
 
 focus next
 select group-shell
 
-focus next
+# focus next
 split -v
 select group-shell
 

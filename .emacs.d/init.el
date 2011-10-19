@@ -10,10 +10,10 @@
 ;; (Shift, Alt, Ctrl) + ファンクションキー
 ;; ________________________________________________________________________________
 
-(global-set-key "\C-h" 'delete-backward-char) ;; C-hでカーソルより前の一文字削除
+(global-set-key [(C h)] 'delete-backward-char) ;; [(C h)]でカーソルより前の一文字削除
 
 ;; windowの切り替え
-(global-set-key "\C-t" 'other-window) ;; C-t で次のウィンドウ、C-S-t で前のウィンドウ
+(global-set-key [(C t)] 'other-window) ;; [(C t)] で次のウィンドウ、[(C S t)] で前のウィンドウ
 
 ;; (if window-system
 ;;     (global-set-key (kbd "C-S-t") (lambda () (interactive) (other-window -1)))
@@ -25,11 +25,11 @@
 (global-set-key [(M \])] 'next-buffer)
 
 ;; M-g M-g を M-g 一回で goto-line
-(global-set-key [(M g)] 'goto-line)
+;; (global-set-key [(M g)] 'goto-line)
 
 ;; KeyRemap4MacBook 用の設定
 (define-prefix-command 'keyremap4macbook-map)
-(global-set-key [(C c) (end)] 'keyremap4macbook-map) ;[(C c) (end)] をプレフィックスキーとして使う
+(global-set-key [(C c) (f4)] 'keyremap4macbook-map) ;[(C c) (f4)] をプレフィックスキーとして使う
 (define-key keyremap4macbook-map [(C a)] (lambda () (interactive) (other-window -1))) ;[(C S t)]
 
 ;;
@@ -106,10 +106,6 @@
 		     line)
 		    'face 'linum)))
 
-;; 1画面スクロールしたときに以前の画面を何行分残すかを設定する
-;; http://marigold.sakura.ne.jp/devel/emacs/scroll/index.html
-(setq next-screen-context-lines 10)
-
 ;テキストモードの時
 (add-hook 'text-mode-hook
           (lambda ()
@@ -125,6 +121,16 @@
 ;; バッファリストを同じウィンドウで
 (define-key global-map [(C x) (C b)] 'buffer-menu)
 
+;; 画面端で次の画面に映るときのスクロール量
+;; http://marigold.sakura.ne.jp/devel/emacs/scroll/index.html
+;; (setq scroll-conservatively 0)
+(setq scroll-step 1)
+
+;; 1画面スクロールしたときに以前の画面を何行分残すかを設定する
+;; http://marigold.sakura.ne.jp/devel/emacs/scroll/index.html
+(setq next-screen-context-lines 2)
+
+
 ;; 
 ;; 外部 lisp
 ;; ________________________________________________________________________________
@@ -135,6 +141,13 @@
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
+;; 使わないバッファを自動的に消す (93)
+;; M-x install-elisp-from-emacswiki tempbuf.el
+(require 'tempbuf)
+;; ファイルを開いたら自動的にtempbufを有効にする
+(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+;; dired バッファに対して tempbuf を有効にする
+(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 
 ;; オートセーブ
 (require 'auto-save-buffers)
