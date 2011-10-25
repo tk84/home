@@ -198,6 +198,24 @@
 ;; ファイル名入力時に ~/junk/年-月-日-時分秒. が出てくる
 (setq open-junk-file-format "~/.emacs.d/etc/junk/%Y-%m-%d-%H%M%S")
 
+;; macのクリップボードにコピー
+(unless window-system (progn
+  (global-set-key [(M w)]
+		  (lambda ()
+		    (interactive)
+		    (call-process-region
+		     (region-beginning) (region-end) "/usr/bin/pbcopy" nil t t)
+		    (kill-ring-save (region-beginning) (region-end))
+		    ))
+  (global-set-key [(C w)]
+		  (lambda ()
+		    (interactive)
+		    (call-process-region
+		     (region-beginning) (region-end) "/usr/bin/pbcopy" nil t t)
+		    (kill-region (region-beginning) (region-end))
+		    ))
+))
+
 ;; 
 ;; できてるのかどうか怪しいやつ
 ;; ________________________________________________________________________________

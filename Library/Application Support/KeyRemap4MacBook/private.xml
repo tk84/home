@@ -83,6 +83,16 @@
               <identifier>net.tk84.remap.screen.layout_new</identifier>
               <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::A, VK_CONTROL, KeyCode::I, VK_CONTROL</autogen>
             </item>
+	    <item>
+	      <name>Markkeys (コピーモード)</name>
+	      <appendix>copy</appendix>
+	      <appendix>[(command escape)] -> [(C z) ([)]</appendix>
+	      <appendix>[(command C \[)] -> [(C z) ([)]</appendix>
+	      <only>TERMINAL</only>
+	      <identifier>net.tk84.remap.screen.copy</identifier>
+	      <autogen>--KeyToKey-- KeyCode::ESCAPE, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
+	      <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND | VK_CONTROL | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
+	    </item>
           </list>
         </item>
         <item>
