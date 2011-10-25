@@ -17,41 +17,6 @@ screen emacs -nw
 # layout の作成
 layout new 0
 layout title layout-root
-layout new 1
-layout title layout-shell
-layout new 2
-layout title layout-emacs
 
-# shell layout の初期化
-layout select layout-shell
 select group-shell
-split
-# split -v
 screen
-
-focus next
-select group-shell
-
-# focus next
-split -v
-select group-shell
-
-focus
-select group-shell
-
-focus
-
-# root layout の初期化
-layout select layout-root
-select group-root
-
-# emacs layout の初期化
-layout select layout-emacs
-select group-emacs
-
-# デフォルトでシェルレイアウトを表示
-layout select layout-shell
-
-
-
-

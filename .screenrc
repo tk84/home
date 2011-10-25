@@ -12,10 +12,10 @@ startup_message off
 sorendition "= KW"
 
 # キャプション
-caption always "%?%F%{= yk}%?%w%="
+caption always "%?%F%{= yk}%?%n %t%="
 
 # ハードステータス
-hardstatus alwayslastline "%=%c"
+hardstatus alwayslastline "%w%=%Y-%m-%d %c:%s"
 
 #defutf8 on
 #defkanji utf-8
@@ -24,8 +24,13 @@ hardstatus alwayslastline "%=%c"
 
 # コピーモード時の設定
 defscrollback 8195
-markkeys h=^B:l=^F:$=^E:^D=^V:^u=^[v
-# ^[ でメタキーになるみたい
+
+# http://www.google.co.jp/url?sa=t&rct=j&q=bindkey%2B%2522-m%2522%2Bscreen&source=web&cd=3&ved=0CC0QFjAC&url=http%3A%2F%2Fwww.gentei.org%2F~yuuji%2Frec%2Fpc%2F.screenrc&ei=RcGmTvL8GsLOmAWchonYDw&usg=AFQjCNFngazS4GlAKbqS4Bpzz4aQQBNHDg&sig2=7wjYMrEw5uoxfzPLYQwAXg
+### 隠れているwindowでbellが鳴ったときにメッセージ。
+bell " Bell in window %."
+
+### 隠れているwindowで動きがあったときのメッセージ
+activity "Activity in window %."
 
 # 別画面サポート less使うときとかに
 # http://d.hatena.ne.jp/edvakf/20110311/1299793959

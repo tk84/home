@@ -19,3 +19,5 @@ export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
 SHELL="/bin/zsh -l"
+
+bindkey -e

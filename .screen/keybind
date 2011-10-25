@@ -1,8 +1,5 @@
 escape ^Zz
 
-# C-gをキャンセルとして使うためにデフォルトのキーバインドを削除
-bind ^g
-
 # 新しいscreenを開く
 bind ! colon 'screen '
 
@@ -28,6 +25,27 @@ bind -c formac ^f eval 'focus prev' 'fit'   #[(command C S t)] -> [(C z) (C a) (
 bind -c formac ^g eval 'focus next' 'fit'   #[(command C t)] -> [(C z) (C a) (C g)]
 bind -c formac ^i colon "source ~/.screen/layout/" #[(command t)] -> [(C z) (C a) (C h)]
 
+# markkeys
+markkeys h=^b:l=^f:$=^e:^D=^V:^u=^[v
+# markkeys のキーバインドはscreenコマンドの入力中などにも有効になるっぽい
+# bindkey -m ^b stuff "h"   # [(C b)]
+# bindkey -m ^f stuff "l"   # [(C f)]
+# bindkey -m ^e stuff "$"   # [(C e)]
+bindkey -m ^[v stuff "^u" # [(M v)]
+bindkey -m ^v stuff "^d"  # [(C v)]
+bindkey -m ^[< stuff "g"  # [(M <)]
+bindkey -m ^[> stuff "G"  # [(M >)]
+bindkey -m ^[f stuff "w"  # [(M f)]
+bindkey -m ^[b stuff "b"  # [(M b)]
+bindkey -m "^ " stuff " " # [(C \ )]
+bindkey -m "^s" stuff "^a s" # [(C s)]
+bindkey -m ^[w eval 'stuff " "' 'writebuf' 'exec !!! /Volumes/Data/Users/hiro/bin/pbcopy_from_screen.sh'
+
+# C-gをキャンセルとして使うためにデフォルトのキーバインドを削除
+bind ^g
+# markkeys でもキャンセルとして使えるように
+bindkey -m ^g stuff "^c"
+
 # レイアウトの作成、削除
 
 # コマンド入力、ウィンドウを開く、etc...
@@ -40,6 +58,3 @@ bind -c formac ^i colon "source ~/.screen/layout/" #[(command t)] -> [(C z) (C a
 # [M x] は [command M x]
 # [(C x) (3)] は [(command C x) (3)]
 # [(C x) (C b)] は [(command C x) (C b)]
-
-
-

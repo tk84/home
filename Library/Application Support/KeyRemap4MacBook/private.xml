@@ -77,11 +77,11 @@
             </item>
             <item>
               <name>新しいレイアウトを開く</name>
-              <appendix>layout new</appendix>
-              <appendix>[(command t)] -> [(C z) (C a) (C h)]</appendix>
+              <appendix>colon "source ~/.screen/layout/"</appendix>
+              <appendix>[(command t)] -> [(C z) (C a) (C i)]</appendix>
               <only>TERMINAL</only>
               <identifier>net.tk84.remap.screen.layout_new</identifier>
-              <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::A, VK_CONTROL, KeyCode::H, VK_CONTROL</autogen>
+              <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::A, VK_CONTROL, KeyCode::I, VK_CONTROL</autogen>
             </item>
           </list>
         </item>
