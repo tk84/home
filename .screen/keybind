@@ -12,19 +12,6 @@ bind o focus
 bind } resize -h +1
 bind \^ resize -v +1
 
-# KeyRemap4MacBook で使う
-# プレフィックスキーとして [(C a)]
-# escape を変更しているため [(C a)] は使われないことが保証される
-# [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
-bind ^a command -c formac
-bind -c formac ^b eval 'prev' 'fit'         #[(command /[)] -> [(C z) (C a) (C b)]
-bind -c formac ^c eval 'next' 'fit'         #[(command /])] -> [(C z) (C a) (C c)]
-bind -c formac ^d eval 'layout prev' 'fit'  #[(command {)] -> [(C z) (C a) (C d)]
-bind -c formac ^e eval 'layout next' 'fit'  #[(command })] -> [(C z) (C a) (C e)]
-bind -c formac ^f eval 'focus prev' 'fit'   #[(command C S t)] -> [(C z) (C a) (C f)]
-bind -c formac ^g eval 'focus next' 'fit'   #[(command C t)] -> [(C z) (C a) (C g)]
-bind -c formac ^i colon "source ~/.screen/layout/" #[(command t)] -> [(C z) (C a) (C h)]
-
 # markkeys
 markkeys h=^b:l=^f:$=^e:^D=^V:^u=^[v
 # markkeys のキーバインドはscreenコマンドの入力中などにも有効になるっぽい
@@ -39,14 +26,28 @@ bindkey -m ^[f stuff "w"  # [(M f)]
 bindkey -m ^[b stuff "b"  # [(M b)]
 bindkey -m "^ " stuff " " # [(C \ )]
 bindkey -m "^s" stuff "^a s" # [(C s)]
-bindkey -m ^[w eval 'stuff " "' 'writebuf' 'exec !!! /Volumes/Data/Users/hiro/bin/pbcopy_from_screen.sh'
+
+# KeyRemap4MacBook で使う
+# プレフィックスキーとして [(C a)]
+# escape を変更しているため [(C a)] は使われないことが保証される
+# [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
+bind ^a command -c formac
+bind -c formac ^b eval 'prev' 'fit'         #[(command /[)] -> [(C z) (C a) (C b)]
+bind -c formac ^c eval 'next' 'fit'         #[(command /])] -> [(C z) (C a) (C c)]
+bind -c formac ^d eval 'layout prev' 'fit'  #[(command {)] -> [(C z) (C a) (C d)]
+bind -c formac ^e eval 'layout next' 'fit'  #[(command })] -> [(C z) (C a) (C e)]
+bind -c formac ^f eval 'focus prev' 'fit'   #[(command C S t)] -> [(C z) (C a) (C f)]
+bind -c formac ^g eval 'focus next' 'fit'   #[(command C t)] -> [(C z) (C a) (C g)]
+bind -c formac ^i colon "source ~/.screen/layout/" #[(command t)] -> [(C z) (C a) (C h)]
+
+# クリップボードにコピー
+bufferfile '/tmp/screen-exchange'
+bindkey -m ^[w eval 'stuff " "' 'writebuf' 'exec sh -c "/usr/bin/pbcopy < /tmp/screen-exchange"'
 
 # C-gをキャンセルとして使うためにデフォルトのキーバインドを削除
 bind ^g
 # markkeys でもキャンセルとして使えるように
 bindkey -m ^g stuff "^c"
-
-# レイアウトの作成、削除
 
 # コマンド入力、ウィンドウを開く、etc...
 # bind -c formac ^i 
