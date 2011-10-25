@@ -6,13 +6,26 @@ term xterm-256color
 
 shell /bin/zsh
 
+startup_message off
+
+# なんか表示するときの色
+sorendition "= KW"
+
+# キャプション
+caption always "%?%F%{= yk}%?%w%="
+
+# ハードステータス
+hardstatus alwayslastline "%=%c"
+
 #defutf8 on
 #defkanji utf-8
 #encoding utf-8 utf-8
 #defencoding utf-8
 
-#コピーモード時の設定
-markkeys h=^B:l=^F:$=^E
+# コピーモード時の設定
+defscrollback 8195
+markkeys h=^B:l=^F:$=^E:^D=^V:^u=^[v
+# ^[ でメタキーになるみたい
 
 # 別画面サポート less使うときとかに
 # http://d.hatena.ne.jp/edvakf/20110311/1299793959

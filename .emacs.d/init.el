@@ -94,17 +94,17 @@
 
       ))
 
-;; 行番号表示
-;; (linum-mode)
-(global-linum-mode t)
-(setq linum-format
-      (lambda (line)
-	(propertize (format
-		     (let ((w (length (number-to-string
-				       (count-lines (point-min) (point-max))))))
-		       (concat "%" (number-to-string w) "d "))
-		     line)
-		    'face 'linum)))
+;; ;; 行番号表示
+;; ;; (linum-mode)
+;; (global-linum-mode t)
+;; (setq linum-format
+;;       (lambda (line)
+;; 	(propertize (format
+;; 		     (let ((w (length (number-to-string
+;; 				       (count-lines (point-min) (point-max))))))
+;; 		       (concat "%" (number-to-string w) "d "))
+;; 		     line)
+;; 		    'face 'linum)))
 
 ;テキストモードの時
 (add-hook 'text-mode-hook
@@ -141,13 +141,13 @@
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; 使わないバッファを自動的に消す (93)
-;; M-x install-elisp-from-emacswiki tempbuf.el
-(require 'tempbuf)
-;; ファイルを開いたら自動的にtempbufを有効にする
-(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
-;; dired バッファに対して tempbuf を有効にする
-(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
+;; ;; 使わないバッファを自動的に消す (93)
+;; ;; M-x install-elisp-from-emacswiki tempbuf.el
+;; (require 'tempbuf)
+;; ;; ファイルを開いたら自動的にtempbufを有効にする
+;; (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+;; ;; dired バッファに対して tempbuf を有効にする
+;; (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 
 ;; オートセーブ
 (require 'auto-save-buffers)
@@ -158,8 +158,9 @@
 ;; カラーテーマ
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-arjen)
+;; (color-theme-arjen)
 ;; (color-theme-jsc-dark)
+(color-theme-dark-laptop)
 
 ;; オートコンプリート
 ;; http://cx4a.org/software/auto-complete/manual.ja.html

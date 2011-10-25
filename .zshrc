@@ -3,11 +3,12 @@ export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # rvm
 # gem セットを作る http://d.hatena.ne.jp/tbrook/20110303/1298497876
-[[ -s "/Users/hiro/.rvm/scripts/rvm" ]] && source "/Users/hiro/.rvm/scripts/rvm"
+[[ -s "/Volumes/Data/Users/hiro/.rvm/scripts/rvm" ]] && source "/Volumes/Data/Users/hiro/.rvm/scripts/rvm"
 #rvm --default ruby-head@20110912
 #rvm use ruby-head
-#rvm default ruby-head@20110912
-rvm default macruby@20110928
+rvm default ruby-head@20110912
+#rvm default macruby@20110928
+rvm default jruby-head@first
 
 # デフォルトエディタの設定
 #export EDITOR="emacsclient -t"

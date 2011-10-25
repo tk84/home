@@ -12,19 +12,23 @@ bind 1 only
 bind 2 split
 bind 3 split -v
 bind o focus
+bind } resize -h +1
+bind \^ resize -v +1
 
 # KeyRemap4MacBook で使う
 # プレフィックスキーとして [(C a)]
 # escape を変更しているため [(C a)] は使われないことが保証される
 # [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
 bind ^a command -c formac
-bind -c formac ^b prev		#[(command /[)] -> [(C z) (C a) (C b)]
-bind -c formac ^c next		#[(command /])] -> [(C z) (C a) (C c)]
-bind -c formac ^d layout prev	#[(command {)] -> [(C z) (C a) (C d)]
-bind -c formac ^e layout next	#[(command })] -> [(C z) (C a) (C e)]
-bind -c formac ^f focus prev	#[(command C S t)] -> [(C z) (C a) (C f)]
-bind -c formac ^g focus next	#[(command C t)] -> [(C z) (C a) (C g)]
-bind -c formac ^h layout new	#[(command t)] -> [(C z) (C a) (C h)]
+bind -c formac ^b eval 'prev' 'fit'         #[(command /[)] -> [(C z) (C a) (C b)]
+bind -c formac ^c eval 'next' 'fit'         #[(command /])] -> [(C z) (C a) (C c)]
+bind -c formac ^d eval 'layout prev' 'fit'  #[(command {)] -> [(C z) (C a) (C d)]
+bind -c formac ^e eval 'layout next' 'fit'  #[(command })] -> [(C z) (C a) (C e)]
+bind -c formac ^f eval 'focus prev' 'fit'   #[(command C S t)] -> [(C z) (C a) (C f)]
+bind -c formac ^g eval 'focus next' 'fit'   #[(command C t)] -> [(C z) (C a) (C g)]
+bind -c formac ^i colon "source ~/.screen/layout/" #[(command t)] -> [(C z) (C a) (C h)]
+
+# レイアウトの作成、削除
 
 # コマンド入力、ウィンドウを開く、etc...
 # bind -c formac ^i 
