@@ -1,0 +1,37 @@
+# ルート直下のファイル、フォルダを無視
+/*
+
+# .gitignore自身を監視対象に
+!/.gitignore
+
+# .emacs.d ディレクトリの init.el だけ
+!/.emacs.d/
+/.emacs.d/*
+!/.emacs.d/init.el
+
+# zsh
+!.zshrc
+
+# screen
+!/.screenrc
+!/.screen/
+
+# 環境設定
+!/Library/
+/Library/*
+!/Library/Preferences
+/Library/Preferences/*
+!/Library/Preferences/org.pqrs.KeyRemap4MacBook.plist
+!/Library/Preferences/com.apple.Terminal.plist
+
+# ユーザー設定
+!/Library/Application Support/
+/Library/Application Support/*
+!/Library/Application Support/KeyRemap4MacBook/
+
+# 自作スクリプト
+!/bin/
+
+# 以下のファイルは新たに監視対象にされたディレクトリからも無視
+.DS_Store
+.git/
