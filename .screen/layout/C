@@ -1,0 +1,9 @@
+layout new
+split -v
+resize -h 80
+focus next
+split
+focus next
+resize -v 20
+focus next
+# layout title C

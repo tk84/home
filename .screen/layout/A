@@ -1,0 +1,9 @@
+layout new
+split -v
+resize -h 160
+split
+focus next
+resize -v 8
+split -v
+focus prev
+# layout title A
