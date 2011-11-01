@@ -1,0 +1,7 @@
+layout new
+split -v
+resize -h 160
+focus next
+split
+focus prev
+# layout title D

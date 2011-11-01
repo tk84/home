@@ -32,8 +32,8 @@ bindkey -m "^s" stuff "^a s" # [(C s)]
 # escape を変更しているため [(C a)] は使われないことが保証される
 # [(C z) (C a) (C a)] は次のプリフィクスキーにするために予約しておく
 bind ^a command -c formac
-bind -c formac ^b eval 'prev' 'fit'         #[(command /[)] -> [(C z) (C a) (C b)]
-bind -c formac ^c eval 'next' 'fit'         #[(command /])] -> [(C z) (C a) (C c)]
+bind -c formac ^b eval 'prev' 'fit'         #[(command \[)] -> [(C z) (C a) (C b)]
+bind -c formac ^c eval 'next' 'fit'         #[(command \])] -> [(C z) (C a) (C c)]
 bind -c formac ^d eval 'layout prev' 'fit'  #[(command {)] -> [(C z) (C a) (C d)]
 bind -c formac ^e eval 'layout next' 'fit'  #[(command })] -> [(C z) (C a) (C e)]
 bind -c formac ^f eval 'focus prev' 'fit'   #[(command C S t)] -> [(C z) (C a) (C f)]
