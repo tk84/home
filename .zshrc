@@ -5,10 +5,10 @@ export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 # gem セットを作る http://d.hatena.ne.jp/tbrook/20110303/1298497876
 [[ -s "/Volumes/Data/Users/hiro/.rvm/scripts/rvm" ]] && source "/Volumes/Data/Users/hiro/.rvm/scripts/rvm"
 #rvm --default ruby-head@20110912
-#rvm use ruby-head
-rvm default ruby-head@20110912
-#rvm default macruby@20110928
-rvm default jruby-head@first
+
+rvm use ruby-head@first --default
+#rvm use macruby@first --default
+#rvm use jruby-head@first --default
 
 # デフォルトエディタの設定
 #export EDITOR="emacsclient -t"
