@@ -6,7 +6,7 @@ export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 [[ -s "/Volumes/Data/Users/hiro/.rvm/scripts/rvm" ]] && source "/Volumes/Data/Users/hiro/.rvm/scripts/rvm"
 #rvm --default ruby-head@20110912
 
-rvm use ruby-head@first --default
+rvm use 1.9.2@first --default
 #rvm use macruby@first --default
 #rvm use jruby-head@first --default
 
@@ -21,3 +21,8 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 SHELL="/bin/zsh -l"
 
 bindkey -e
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+alias nginx="/usr/local/sbin/nginx"
+#alias start_nginx="/usr/local/sbin/nginx -p /Volumes/Data/Users/hiro/Sites/nginx/ -c /Volumes/Data/Users/hiro/Sites/nginx/conf/nginx.conf"
+alias start_nginx="/usr/local/sbin/nginx -p /Volumes/Data/Users/hiro/Dropbox/nginx/ -c /Volumes/Data/Users/hiro/Dropbox/nginx/conf/nginx.conf"

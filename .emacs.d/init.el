@@ -110,12 +110,18 @@
 (add-hook 'text-mode-hook
           (lambda ()
             (setq indent-line-function 'tab-to-tab-stop)
-            (setq-default tab-width 4)
-            (setq default-tab-width 4)
+            (setq-default tab-width 2)
+            (setq default-tab-width 2)
             (setq-default indent-tabs-mode nil)
-            (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
-                                    64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
+            (setq tab-stop-list '(2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60
+                                    62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 104 106 108 110 112 114 116 118 120))
             (add-hook 'text-mode 'turn-on-auto-revert-mode)
+            ))
+
+;jsモードの時
+(add-hook 'javascript-mode
+          (lambda ()
+            (setq js-indent-level 2)
             ))
 
 ;; バッファリストを同じウィンドウで
@@ -140,6 +146,21 @@
 (let ((default-directory "~/.emacs.d/lisp"))
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
+
+;coffeeスクリプトモードの時
+(require 'coffee-mode)
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (setq indent-line-function 'tab-to-tab-stop)
+            (setq-default tab-width 2)
+            (setq default-tab-width 2)
+            (setq-default indent-tabs-mode nil)
+            (setq tab-stop-list '(2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60
+                                    62 64 66 68 70 72 74 76 78 80 82 84 86 88 90 92 94 96 98 100 102 104 106 108 110 112 114 116 118 120))
+            (setq coffee-cleanup-whitespace nil)
+            ))
+(add-hook 'coffee-mode-hook 'turn-on-auto-revert-mode)
+
 
 ;; ;; 使わないバッファを自動的に消す (93)
 ;; ;; M-x install-elisp-from-emacswiki tempbuf.el

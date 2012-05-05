@@ -1,9 +1,24 @@
 <?xml version="1.0"?>
 <root>
+  <appdef>
+    <appname>EVERNOTE</appname>
+    <equal>com.evernote.Evernote</equal>
+  </appdef>
   <list>
     <item>
       <name>ユーザー定義</name>
       <list>
+        <item>
+          <name>Evernote</name>
+          <list>
+            <item>
+              <name>タブキーをスペース二つにする</name>
+              <identifier>net.tk84.remap.evernote.tab_to_space</identifier>
+              <only>EVERNOTE</only>
+              <autogen>--KeyToKey-- KeyCode::TAB, ModifierFlag::NONE, KeyCode::SPACE, VK_SHIFT, KeyCode::SPACE, VK_SHIFT</autogen>
+            </item>
+          </list>
+        </item>
         <item>
           <name>GNU Emacs</name>
           <list>
@@ -83,17 +98,33 @@
               <identifier>net.tk84.remap.screen.layout_new</identifier>
               <autogen>--KeyToKey-- KeyCode::T, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::A, VK_CONTROL, KeyCode::I, VK_CONTROL</autogen>
             </item>
-	    <item>
-	      <name>Markkeys (コピーモード)</name>
-	      <appendix>copy</appendix>
-	      <appendix>[(command escape)] -> [(C z) ([)]</appendix>
-	      <appendix>[(command C \[)] -> [(C z) ([)]</appendix>
-	      <only>TERMINAL</only>
-	      <identifier>net.tk84.remap.screen.copy</identifier>
-	      <autogen>--KeyToKey-- KeyCode::ESCAPE, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
-	      <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND | VK_CONTROL | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
-	    </item>
+            <item>
+              <name>Markkeys (コピーモード)</name>
+              <appendix>copy</appendix>
+              <appendix>[(command escape)] -> [(C z) ([)]</appendix>
+              <appendix>[(command C \[)] -> [(C z) ([)]</appendix>
+              <only>TERMINAL</only>
+              <identifier>net.tk84.remap.screen.copy</identifier>
+              <autogen>--KeyToKey-- KeyCode::ESCAPE, VK_COMMAND | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
+              <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND | VK_CONTROL | ModifierFlag::NONE, KeyCode::Z, VK_CONTROL, KeyCode::BRACKET_LEFT</autogen>
+            </item>
           </list>
+        </item>
+        <item>
+          <name>RETURN to DELETE</name>
+          <identifier>remap.net_tk84_return_to_delete</identifier>
+          <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::DELETE</autogen>
+        </item>
+        <item>
+          <name>BACKSLASH to Control and RETURN</name>
+          <appendix>(+ When you type Backslash only, send Return)</appendix>
+          <identifier>remap.net_tk84_backslash_to_return</identifier>
+          <autogen>--KeyOverlaidModifierWithRepeat-- KeyCode::BACKSLASH, KeyCode::CONTROL_R, KeyCode::RETURN</autogen>
+        </item>
+        <item>
+          <name>JIS_UNDERSCORE to SHIFT_R</name>
+          <identifier>remap.net_tk84_backquote_to_shift_r</identifier>
+          <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::SHIFT_R</autogen>
         </item>
         <item>
           <name>JIS_UNDERSCORE to BACKSLASH</name>
