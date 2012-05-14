@@ -21,8 +21,12 @@
 ;;   (global-set-key "\M-n" (lambda () (interactive) (other-window -1))))
 
 ;; buffer の切り替え
-(global-set-key [(M \[)] 'previous-buffer)
-(global-set-key [(M \])] 'next-buffer)
+;; http://nori-computer.blogspot.jp/2009/05/emacs-buffer-selection.html
+;; (global-set-key [(M \[)] 'previous-buffer)
+;; (global-set-key [(M \])] 'next-buffer)
+(global-set-key [(M \[)] 'bs-cycle-previous)
+(global-set-key [(M \])] 'bs-cycle-next)
+(global-set-key [(C x) (C b)] 'bs-show)
 
 ;; M-g M-g を M-g 一回で goto-line
 ;; (global-set-key [(M g)] 'goto-line)
@@ -31,6 +35,7 @@
 (define-prefix-command 'keyremap4macbook-map)
 (global-set-key [(C c) (f4)] 'keyremap4macbook-map) ;[(C c) (f4)] をプレフィックスキーとして使う
 (define-key keyremap4macbook-map [(C a)] (lambda () (interactive) (other-window -1))) ;[(C S t)]
+
 
 ;;
 ;; ????
@@ -160,6 +165,18 @@
             (setq coffee-cleanup-whitespace nil)
             ))
 (add-hook 'coffee-mode-hook 'turn-on-auto-revert-mode)
+
+;; php-mode
+;; http://blog.fusic.co.jp/archives/94
+;; http://insnvlovn.blogspot.jp/2010/04/emacs-php-mode.html
+(require 'php-mode)
+(setq php-mode-force-pear t) ;PEAR規約のインデント設定にする
+(add-hook 'php-mode-hook
+	  (lambda ()
+	    (setq c-comment-only-line-offset 0)
+	    ;(c-set-style "stroustrup")
+	    ))
+;;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときにphp-modeを自動起動する
 
 
 ;; ;; 使わないバッファを自動的に消す (93)

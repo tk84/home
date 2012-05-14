@@ -119,7 +119,7 @@
           <name>BACKSLASH to Control and RETURN</name>
           <appendix>(+ When you type Backslash only, send Return)</appendix>
           <identifier>remap.net_tk84_backslash_to_return</identifier>
-          <autogen>--KeyOverlaidModifierWithRepeat-- KeyCode::BACKSLASH, KeyCode::CONTROL_R, KeyCode::RETURN</autogen>
+          <autogen>--KeyOverlaidModifier-- KeyCode::BACKSLASH, KeyCode::CONTROL_R, KeyCode::RETURN</autogen>
         </item>
         <item>
           <name>JIS_UNDERSCORE to SHIFT_R</name>

@@ -8,11 +8,15 @@ screen -t group-shell 1 //group
 select group-root
 screen -t group-emacs 2 //group
 select group-root
+screen -t group-bash 3 //group
+select group-root
+screen -t group-sqlite 4 //group
+select group-root
 screen -t group-daemon 99 //group
 
 # emacs デーモンの作成
 select group-daemon
-screen emacs -nw
+#screen emacs -nw
 
 # layout の作成
 layout new 0
