@@ -8,19 +8,39 @@ screen -t group-shell 1 //group
 select group-root
 screen -t group-emacs 2 //group
 select group-root
-screen -t group-bash 3 //group
+screen -t group-watch 3 //group
 select group-root
-screen -t group-sqlite 4 //group
+screen -t group-ssh 4 //group
 select group-root
 screen -t group-daemon 99 //group
 
 # emacs デーモンの作成
 select group-daemon
-#screen emacs -nw
+screen emacs -nw --eval "(let () (setq server-name \"em_$STY\")(server-start))"
 
 # layout の作成
-layout new 0
-layout title layout-root
+layout new 0 layout-shell
+layout new 1 layout-emacs
+layout new 2 layout-watch
 
+# emacsを2つ
+layout select 1
+select group-emacs
+screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb
+screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb
+
+# watchを横分割
+layout select 2
+select group-watch
+split
+focus next
+select group-watch
+
+# shellを縦分割
+layout select 0
+split -v
+focus next
+select group-shell
+focus next
 select group-shell
 screen

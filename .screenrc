@@ -40,14 +40,17 @@ altscreen on
 autodetach on
 
 # プロセス終了時にメッセージを表示
-#zombie d
+zombie "q^M"
 
 # キーバインド設定の読み込み
 source ~/.screen/keybind
+
+# emacs用の環境変数をセット
+setenv SCREEN_ID $STY
 
 # 初期状態を作成
 source ~/.screen/init
 
 
-
-
+#screen emacs -nw --eval "(let () (setq server-name \"em_$STY\")(server-start))"
+#screen

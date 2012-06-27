@@ -23,10 +23,12 @@ SHELL="/bin/zsh -l"
 bindkey -e
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-alias nginx="/usr/local/sbin/nginx"
-#alias start_nginx="/usr/local/sbin/nginx -p /Volumes/Data/Users/hiro/Sites/nginx/ -c /Volumes/Data/Users/hiro/Sites/nginx/conf/nginx.conf"
-alias start_nginx="/usr/local/sbin/nginx -p /Volumes/Data/Users/hiro/Dropbox/nginx/ -c /Volumes/Data/Users/hiro/Dropbox/nginx/conf/nginx.conf"
-alias em="emacsclient -t "
+#alias em="emacsclient -t "
 
 export RACK_ENV=development
 export RAILS_ENV=development
+
+if [ $SCREEN_ID ]
+then
+  alias em="emacsclient -s \"em_$SCREEN_ID\" "
+fi

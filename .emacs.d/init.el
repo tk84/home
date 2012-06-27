@@ -1,4 +1,4 @@
-(unless window-system (server-mode))	;端末の場合サーバとして起動
+;; (unless window-system (server-mode))	;端末の場合サーバとして起動
 
 ;; 
 ;; キーバインド
