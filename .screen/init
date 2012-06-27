@@ -27,7 +27,9 @@ layout new 2 layout-watch
 layout select 1
 select group-emacs
 screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb
-screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb
+colon 'screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb'
+# screen -t emacs emacsclient -s em_$STY -t /tmp/emacs.rb
+
 
 # watchを横分割
 layout select 2

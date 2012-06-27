@@ -12,6 +12,8 @@ bind o focus
 bind } resize -h +1
 bind \^ resize -v +1
 
+bind ' ' select 0
+
 # markkeys
 markkeys h=^b:l=^f:$=^e:^D=^V:^u=^[v
 # markkeys のキーバインドはscreenコマンドの入力中などにも有効になるっぽい
