@@ -152,6 +152,11 @@
   (setq load-path (cons default-directory load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
+;; ruby-mode
+(add-to-list 'auto-mode-alist '("/[Rr]akefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("/[Gg]emfile$" . ruby-mode))
+
+
 ;coffeeスクリプトモードの時
 (require 'coffee-mode)
 (add-hook 'coffee-mode-hook
@@ -166,6 +171,9 @@
             ))
 (add-hook 'coffee-mode-hook 'turn-on-auto-revert-mode)
 
+
+
+
 ;; php-mode
 ;; http://blog.fusic.co.jp/archives/94
 ;; http://insnvlovn.blogspot.jp/2010/04/emacs-php-mode.html
@@ -177,6 +185,22 @@
 	    ;(c-set-style "stroustrup")
 	    ))
 ;;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode)) ;*.phpのファイルのときにphp-modeを自動起動する
+
+;; https://github.com/nex3/haml-mode
+(require 'haml-mode)
+(add-to-list 'auto-mode-alist '("\\.hamlc$" . haml-mode))
+
+
+;; https://github.com/nex3/sass-mode
+(require 'sass-mode)
+
+;; https://github.com/antonj/Highlight-Indentation-for-Emacs
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-current-column-face "#444444")
+(setq highlight-indentation-offset 2)
+(add-hook 'haml-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'coffee-mode-hook 'highlight-indentation-mode)
+(add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
 
 
 ;; ;; 使わないバッファを自動的に消す (93)
