@@ -10,10 +10,6 @@ rvm use 1.9.3
 #rvm use macruby@first --default
 #rvm use jruby-head@first --default
 
-# デフォルトエディタの設定
-#export EDITOR="emacsclient -t"
-export EDITOR="/usr/local/bin/emacsclient -t"
-
 # ls コマンドをカラー表示
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
@@ -28,7 +24,16 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export RACK_ENV=development
 export RAILS_ENV=development
 
-if [ $SCREEN_ID ]
+# デフォルトエディタの設定
+export EDITOR="nano"
+
+if [ $STYID ]
 then
-  alias em="emacsclient -s \"em_$SCREEN_ID\" "
+  alias em="emacsclient -s \"em_$STYID\" "
+  alias emt="em -t "
+  alias emn="em -n "
+  export EDITOR="emt"
 fi
+
+
+
