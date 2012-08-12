@@ -14,7 +14,7 @@ rvm use 1.9.3
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
-SHELL="/bin/zsh -l"
+SHELL="/bin/zsh"
 
 bindkey -e
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -34,6 +34,4 @@ then
   alias emn="em -n "
   export EDITOR="emt"
 fi
-
-
 

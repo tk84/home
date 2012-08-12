@@ -1,0 +1,4 @@
+source ~/.screen/config
+source ~/.screen/keybind
+source ~/.screen/init
+

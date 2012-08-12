@@ -2,6 +2,8 @@
 ## layout/windowの初期状態を作る
 ##
 
+setenv STYID $STY
+
 # window グループの作成
 screen -t group-root 0 //group
 screen -t group-shell 1 //group
