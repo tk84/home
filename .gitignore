@@ -19,10 +19,10 @@
 # 環境設定
 !/Library/
 /Library/*
-!/Library/Preferences
-/Library/Preferences/*
-!/Library/Preferences/org.pqrs.KeyRemap4MacBook.plist
-!/Library/Preferences/com.apple.Terminal.plist
+#!/Library/Preferences
+#/Library/Preferences/*
+#!/Library/Preferences/org.pqrs.KeyRemap4MacBook.plist
+#!/Library/Preferences/com.apple.Terminal.plist
 
 # ユーザー設定
 !/Library/Application Support/
